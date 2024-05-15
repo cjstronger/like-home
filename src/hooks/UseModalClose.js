@@ -6,7 +6,6 @@ export default function useModalClose(handler) {
     function () {
       function handleClick(e) {
         if (ref.current && !ref.current.contains(e.target)) {
-          console.log("yes");
           handler();
         }
       }

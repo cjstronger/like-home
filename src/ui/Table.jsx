@@ -1,3 +1,6 @@
+/*eslint-disable react/prop-types*/
+
+import { createContext, useContext, useState } from "react";
 import styled from "styled-components";
 
 const StyledTable = styled.div`
@@ -58,3 +61,39 @@ const Empty = styled.p`
   text-align: center;
   margin: 2.4rem;
 `;
+
+const TableContext = createContext();
+
+export function Table({ children, columns }) {
+  const [tableId, setTableId] = useState("");
+  const close = () => setTableId("");
+  const open = setTableId;
+  return (
+    <TableContext.Provider value={{ open, close, tableId, columns }}>
+      <StyledTable>{children}</StyledTable>
+    </TableContext.Provider>
+  );
+}
+
+function Header({ children }) {
+  const { columns } = useContext(TableContext);
+  return (
+    <StyledHeader as="header" columns={columns}>
+      {children}
+    </StyledHeader>
+  );
+}
+
+function Row({ children }) {
+  const { columns } = useContext(TableContext);
+  return <StyledRow columns={columns}>{children}</StyledRow>;
+}
+
+function Body({ render, data }) {
+  if (!data.length) return <Empty>No data at the moment</Empty>;
+
+  return <StyledBody>{data.map(render)}</StyledBody>;
+}
+Table.Row = Row;
+Table.Header = Header;
+Table.Body = Body;

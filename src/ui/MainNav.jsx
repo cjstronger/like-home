@@ -74,7 +74,7 @@ export default function MainNav() {
         </StyledNavLink>
         <StyledNavLink to="/users">
           <HiOutlineUsers />
-          <span>Bookings</span>
+          <span>User</span>
         </StyledNavLink>
         <StyledNavLink to="/settings">
           <HiOutlineCog6Tooth />
