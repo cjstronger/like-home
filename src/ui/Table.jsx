@@ -97,3 +97,4 @@ function Body({ render, data }) {
 Table.Row = Row;
 Table.Header = Header;
 Table.Body = Body;
+Table.Footer = Footer;

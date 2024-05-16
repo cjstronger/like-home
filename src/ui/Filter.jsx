@@ -35,6 +35,11 @@ const FilterButton = styled.button`
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);
   }
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-brand-600);
+    color: var(--color-brand-50);
+  }
 `;
 
 export default function Filter({ searchPeramsSetter, options }) {
