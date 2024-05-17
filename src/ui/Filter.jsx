@@ -45,6 +45,7 @@ const FilterButton = styled.button`
 export default function Filter({ searchPeramsSetter, options }) {
   const [searchPerams, setSearchPerams] = useSearchParams();
   function handleClick(value) {
+    if (searchPerams.get("status")) searchPerams.set("page", 1);
     searchPerams.set(searchPeramsSetter, value);
     setSearchPerams(searchPerams);
   }

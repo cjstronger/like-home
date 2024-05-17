@@ -5,7 +5,7 @@ import { Table } from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import Empty from "../../ui/Empty";
 import Spinner from "../../ui/Spinner";
-import useBookingsQuery from "./useBookingQuery";
+import useBookingsQuery from "./useBookingsQuery";
 import Pagination from "../../ui/Pagination";
 
 export default function BookingTable() {
