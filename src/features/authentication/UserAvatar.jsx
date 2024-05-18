@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useUsers } from "./UseUsers";
+import Spinner from "../../ui/Spinner";
 
 const StyledUserAvatar = styled.div`
   display: flex;
@@ -19,3 +21,19 @@ const Avatar = styled.img`
   border-radius: 50%;
   outline: 2px solid var(--color-grey-100);
 `;
+
+export default function UserAvatar() {
+  const { user, isLoading } = useUsers();
+
+  if (isLoading) return <Spinner />;
+
+  const avatar = user.user_metadata.avatar;
+  const fullName = user.user_metadata.fullName;
+
+  return (
+    <StyledUserAvatar>
+      <Avatar src={`${avatar ? avatar : "default-user.jpg"}`} />
+      {fullName}
+    </StyledUserAvatar>
+  );
+}
