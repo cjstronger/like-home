@@ -18,6 +18,7 @@ import { useState } from "react";
 import useCheckin from "./useCheckin";
 import useSettings from "../settings/useSettings";
 import { formatCurrency } from "../../utils/helpers";
+import { useNavigate } from "react-router";
 
 const Box = styled.div`
   /* Box */
@@ -32,6 +33,7 @@ function CheckinBooking() {
   const [hasBr, setHasBr] = useState(false);
   const { booking, isLoading } = useBookingQuery();
   const { settings, isLoading: isLoadingSettings } = useSettings() || {};
+  const navigate = useNavigate();
 
   useEffect(() => setHasPaid(booking?.isPaid ?? false), [booking]);
 
@@ -65,6 +67,7 @@ function CheckinBooking() {
     } else {
       checkinMutate({ bookingId, breakfast: {} });
     }
+    navigate("/bookings");
   }
 
   return (

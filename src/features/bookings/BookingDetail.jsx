@@ -40,6 +40,11 @@ function BookingDetail() {
     "checked-in": "green",
     "checked-out": "silver",
   };
+  function handleCheckout() {
+    if (!bookingId) return null;
+    checkoutMutate(bookingId);
+    navigate("/bookings");
+  }
 
   return (
     <>
@@ -66,7 +71,7 @@ function BookingDetail() {
           {status === "checked-in" && (
             <Button
               variation="primary"
-              onClick={() => checkoutMutate(bookingId)}
+              onClick={handleCheckout}
               disabled={isCheckingOut}
             >
               Check-Out

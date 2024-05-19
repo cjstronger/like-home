@@ -3,6 +3,7 @@ import Logout from "../features/authentication/Logout";
 import UserAvatar from "../features/authentication/UserAvatar";
 import ButtonIcon from "./ButtonIcon";
 import HeaderMenu from "./HeaderMenu";
+import DarkMode from "./DarkMode";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -18,6 +19,7 @@ export default function Header() {
     <StyledHeader>
       <UserAvatar />
       <HeaderMenu />
+      <DarkMode />
     </StyledHeader>
   );
 }
