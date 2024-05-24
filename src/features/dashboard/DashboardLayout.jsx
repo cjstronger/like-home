@@ -17,7 +17,7 @@ export default function DashboardLayout() {
   const { stays, loadingStays, confirmedStays, numDays } = useRecentStays();
   const { bookings, loadingBookings } = useRecentBookings();
 
-  if (loadingStays || loadingBookings) return <Spinner />;
+  if (loadingBookings || loadingStays) return <Spinner />;
 
   return (
     <StyledDashboardLayout>

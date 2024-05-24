@@ -41,7 +41,6 @@ const NoActivity = styled.p`
 
 function Today() {
   const { loadingToday, todayStays } = useTodayStays();
-  console.log(todayStays);
 
   if (loadingToday) return <Spinner />;
 
@@ -50,6 +49,7 @@ function Today() {
       <Row type="horizontal">
         <Heading as="h2">Today</Heading>
       </Row>
+      {!todayStays.length && <NoActivity>No activity today...</NoActivity>}
       <TodayList>
         {todayStays.map((today) => (
           <TodayItem key={today.id} today={today} />

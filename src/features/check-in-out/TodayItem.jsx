@@ -21,11 +21,6 @@ export const StyledTodayItem = styled.li`
     border-top: 1px solid var(--color-grey-100);
   }
 `;
-const statusToTagName = {
-  unconfirmed: "blue",
-  "checked-in": "green",
-  "checked-out": "silver",
-};
 
 export const Guest = styled.div`
   font-weight: 500;

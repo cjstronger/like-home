@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function useModalClose(handler) {
+export default function useModalClose(handler, value = true) {
   const ref = useRef();
   useEffect(
     function () {
@@ -9,8 +9,8 @@ export default function useModalClose(handler) {
           handler();
         }
       }
-      document.addEventListener("click", handleClick, true);
-      return () => document.removeEventListener("click", handleClick, true);
+      document.addEventListener("click", handleClick, value);
+      return () => document.removeEventListener("click", handleClick, value);
     },
     [handler]
   );
