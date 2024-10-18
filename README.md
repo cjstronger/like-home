@@ -9,4 +9,4 @@
 ## May 18
 - Added the last touches to the dashboard with check-in check-out functionality in the homepage.
 ## October 18 
-Changed the backend from utilizing Supabase to PostgreSQL same thing, really as Supabase also uses PostgreSQL but implementing everything myself.
+Changed the backend from utilizing Supabase to PostgreSQL, same thing really as Supabase also uses PostgreSQL. I'd just rather implement everything myself.
